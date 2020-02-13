@@ -40,22 +40,18 @@ def tree_project():
         os.mkdir(dir_project)   # Cria diretório do projeto
         os.chdir(dir_project)   # Dentro da pasta criada
         os.mkdir(MODULES)       # Cria dir modules
-        p1 = os.path.join(os.getcwd(), MODULES)
-        os.chdir(p1)
+        os.chdir(MODULES)
         for folder in folders:  # Cria diretórios dev,uat,prod
-            os.mkdir(folder)  
-        pwd_dev = os.path.join(os.getcwd(), folders[0]) 
-        os.chdir(pwd_dev)            # Dentro de dev
+            os.mkdir(folder) 
+        os.chdir(folders[0])            # Dentro de dev
         for sub1 in sub_folders: # Cria diretórios back,compute,network
             os.mkdir(sub1)
         os.chdir('..')
-        pwd_uat = (f'{os.getcwd()}\\{folders[1]}')
-        os.chdir(pwd_uat)
+        os.chdir(folders[1])
         for sub2 in sub_folders:
             os.mkdir(sub2)
         os.chdir('..')
-        pwd_pro = (f'{os.getcwd()}\\{folders[2]}')
-        os.chdir(pwd_pro)
+        os.chdir(folders[2])
         for sub3 in sub_folders:
             os.mkdir(sub3)
         os.chdir('..')
