@@ -12,6 +12,7 @@ def tree_project():
     folders = ['dev', 'uat', 'prod']
     sub_folders = ['backend','compute','networking']
     tfs = ["main","variables","outputs"]
+    mainfilesdir = ['main.tf','variables.tf','outputs.tf','README.md','.gitignore']
     if not os.path.exists(dir_project):
         os.mkdir(dir_project)   # Cria diretório do projeto
         os.chdir(dir_project)   # Dentro da pasta criada
@@ -69,8 +70,10 @@ def tree_project():
             for tfsnetwork3 in tfs:
                 f = open(f'{tfsnetwork3}.tf', 'w')
             os.chdir('..')
+            os.chdir('..')
         os.chdir('..')
-
-
+        for mainfiles in mainfilesdir:
+            f = open(f'{mainfiles}', 'w')
+        
 tree_project()
 
