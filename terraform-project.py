@@ -3,11 +3,6 @@ import os
 ENVS = "environments"
 MODULES = "modules"
 
-# Terraform files directories
-DEV = "dev"
-PRE = "uat"
-PROD = "prod"
-
 # Terraform modules directories
 BACK = "backend"
 CM = "compute"
