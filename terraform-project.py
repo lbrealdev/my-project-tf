@@ -1,30 +1,11 @@
 import os
 
-ENVS = "environments"
 MODULES = "modules"
-
-# Terraform modules directories
-BACK = "backend"
-CM = "compute"
-NET = "networking"
-
-# Files .tf
-
-readme = "README.md"
-main_f = "main.tf"
-vars_f = "variables.tf"
-out_f = "outputs.tf"
-ignore = ".gitignore"
-# cmd
-
-touch = "copy nul"
 
 name_dir_project = str(input("Nome do seu projeto: "))
 """ git = str(input("git init (Y/N): ")) """
 
 a = "C:\\Users\\lbgoncalves\\Documents\\meus_tests\\"
-
-
 dir_project = os.path.join(f'{a} {name_dir_project}')
 
 def tree_project():
