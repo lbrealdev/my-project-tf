@@ -3,7 +3,7 @@ import os
 MODULES = "modules"
 
 name_dir_project = str(input("Nome do seu projeto: "))
-""" git = str(input("git init (Y/N): ")) """
+git = str(input("git init (Y/N): "))
 
 a = "C:\\Users\\lbgoncalves\\Documents\\meus_tests\\"
 dir_project = os.path.join(f'{a} {name_dir_project}')
@@ -74,6 +74,10 @@ def tree_project():
         os.chdir('..')
         for mainfiles in mainfilesdir:
             f = open(f'{mainfiles}', 'w')
+        if git == "y":
+            os.system('git init')
+        elif git == "n":
+            pass
         
 tree_project()
 
