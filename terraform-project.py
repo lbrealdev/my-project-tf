@@ -6,7 +6,7 @@ name_dir_project = str(input("Nome do seu projeto: "))
 git = str(input("git init (Y/N): "))
 
 a = "C:\\Users\\lbgoncalves\\Documents\\meus_tests\\"
-dir_project = os.path.join(f'{a} {name_dir_project}')
+dir_project = os.path.join(f'{a}{name_dir_project}')
 
 def tree_project():
     folders = ['dev', 'uat', 'prod']
@@ -76,8 +76,10 @@ def tree_project():
             f = open(f'{mainfiles}', 'w')
         if git == "y":
             os.system('git init')
+            os.system('cls')
         elif git == "n":
             pass
-        
+        os.system('cls')
+        print(f'Your project was created in {os.getcwd()}')
 tree_project()
 
