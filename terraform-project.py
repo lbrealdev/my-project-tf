@@ -1,11 +1,17 @@
 import os
+from pathlib import Path
 
+PROJECT = "projects"
 MODULES = "modules"
+HOMEPATH = str(Path.home())
+ENTRYPOINT = "\\Documents\\"
+
+
 
 name_dir_project = str(input("Nome do seu projeto: "))
 git = str(input("git init (Y/N): "))
 
-a = "C:\\Users\\lbgoncalves\\Documents\\meus_tests\\"
+a = ("{}{}{}".format(HOMEPATH, ENTRYPOINT, PROJECT))
 dir_project = os.path.join(f'{a}{name_dir_project}')
 
 def tree_project():
@@ -13,9 +19,15 @@ def tree_project():
     sub_folders = ['backend','compute','networking']
     tfs = ["main","variables","outputs"]
     mainfilesdir = ['main.tf','variables.tf','outputs.tf','README.md','.gitignore']
+    if not os.path.exists(a):
+        os.chdir(f'{HOMEPATH}{ENTRYPOINT}')
+        os.mkdir(PROJECT)
+        os.chdir(PROJECT)
+    else:
+        os.chdir(a)
     if not os.path.exists(dir_project):
-        os.mkdir(dir_project)   # Cria diretório do projeto
-        os.chdir(dir_project)   # Dentro da pasta criada
+        os.mkdir(name_dir_project)   # Cria diretório do projeto
+        os.chdir(name_dir_project)   # Dentro da pasta criada
         os.mkdir(MODULES)       # Cria dir modules
         os.chdir(MODULES)
         for folder in folders:  # Cria diretórios dev,uat,prod
