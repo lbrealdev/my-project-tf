@@ -6,17 +6,16 @@ MODULES = "modules"
 HOMEPATH = str(Path.home())
 ENTRYPOINT = "\\Documents\\"
 
-name_dir_project = str(input("Nome do seu projeto: "))
-git = str(input("git init (Y/N): "))
-
+folders = ['dev', 'uat', 'prod']
+sub_folders = ['backend','compute','networking']
+tfs = ["main","variables","outputs"]
+mainfilesdir = ['main.tf','variables.tf','outputs.tf','README.md','.gitignore']
 a = ("{}{}{}".format(HOMEPATH, ENTRYPOINT, PROJECT))
-dir_project = os.path.join(f'{a}{name_dir_project}')
 
 def tree_project():
-    folders = ['dev', 'uat', 'prod']
-    sub_folders = ['backend','compute','networking']
-    tfs = ["main","variables","outputs"]
-    mainfilesdir = ['main.tf','variables.tf','outputs.tf','README.md','.gitignore']
+    name_dir_project = str(input("Nome do seu projeto: "))
+    git = str(input("git init (Y/N): "))
+    dir_project = os.path.join(f'{a}{name_dir_project}')
     if not os.path.exists(a):
         os.chdir(f'{HOMEPATH}{ENTRYPOINT}')
         os.mkdir(PROJECT)
